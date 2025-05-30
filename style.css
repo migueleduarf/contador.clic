@@ -1,1 +1,47 @@
+/* Estilo geral do corpo */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #9ACBD0;
+  font-family: Arial, sans-serif;
+}
 
+/* Container central que envolve todo o conteúdo */
+.container {
+  background-color: #48A6A7;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Contador numérico */
+#contador {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color:white;
+}
+
+/* Botão de clique */
+#botaoClique {
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #006A71;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Efeito hover no botão */
+#botaoClique:hover {
+  background-color: #0056b3;
+}
+
+h1{
+ color: white
+ }
