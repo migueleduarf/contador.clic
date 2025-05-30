@@ -1,7 +1,16 @@
 let contador = 0;
 
-document.getElementById("botaoClique").addEventListener("click", () => {
+const btnClique = document.getElementById("botaoClique");
+const btnResetar = document.getElementById("resetar");
+const divContador = document.getElementById("contador");
+
+btnClique.addEventListener("click", () => {
   contador++;
-  document.getElementById("contador").textContent = contador;
+  divContador.textContent = contador;
+});
+
+btnResetar.addEventListener("click", () => {
+  contador = 0;
+  divContador.textContent = contador;
 });
 
