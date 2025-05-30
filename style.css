@@ -4,12 +4,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #9ACBD0;
+  background-color: #f0f2f5;
   font-family: Arial, sans-serif;
 }
 
 .container {
-  background-color: #48A6A7;
+  background-color: #fff;
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -19,38 +19,32 @@ body {
 #contador {
   font-size: 3rem;
   margin-bottom: 20px;
-  color: #fff;
+  color: #333;
 }
 
 button {
   padding: 15px 30px;
   font-size: 1.2rem;
-  border: none;botaoClique
+  border: none;
   border-radius: 10px;
   margin: 5px;
-  color: fff;
+  color: white;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 #botaoClique {
-  background-color: #006A71;
+  background-color: #007bff;
 }
 
 #botaoClique:hover {
-  background-color: #006A71;
+  background-color: #0056b3;
 }
 
 #resetar {
-  background-color: #006A71;
+  background-color: #dc3545;
 }
 
 #resetar:hover {
-  background-color: #006A71;
-}
-#resetar{
-  color:white
-}
-#botaoClique{
-  color: white
+  background-color: #a71d2a;
 }
