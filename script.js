@@ -27,23 +27,7 @@ function atualizarContador() {
     } else if (contador === 100) {
         mensagem.textContent = "CENTENÁRIO! Você atingiu 100 cliques!";
     } else if (contador > 100 && contador % 100 === 0) {
-        mensagemador = 0;
-
-const btnClique = document.getElementById("botaoClique");
-const btnResetar = document.getElementById("resetar");
-const divContador = document.getElementById("contador");
-
-btnClique.addEventListener("click", () => {
-  contador++;
-  divContador.textContent = contador;
-});
-
-btnResetar.addEventListener("click", () => {
-  contador = 0;
-  divContador.textContent = contador;
-});
-
- textContent = `Inacreditável! ${contador} cliques!`;
+        mensagem.textContent = `Inacreditável! ${contador} cliques!`;
     } else if (contador > 0 && contador % 25 === 0) {
         mensagem.textContent = `Bom trabalho! ${contador} cliques!`;
     }
