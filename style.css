@@ -2,6 +2,14 @@
     --cor-primaria: #6a11cb;
     --cor-secundaria: #2575fc;
     --cor-texto: #ffffff;
+    --cor-botao: #ffffff;
+    --cor-botao-hover: #f0f0f0;
+    --cor-botao-texto: #6a11cb;
+    --cor-botao-reset: rgba(255, 255, 255, 0.2);
+    --cor-botao-reset-hover: rgba(255, 255, 255, 0.3);
+    --sombra: 0 4px 15px rgba(0, 0, 0, 0.2);
+    --sombra-hover: 0 8px 20px rgba(0, 0, 0, 0.3);
+    --borda-radius: 50px;
 }
 
 * {
@@ -11,7 +19,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -21,23 +29,27 @@ body {
     color: var(--cor-texto);
     padding: 20px;
     transition: background 0.5s ease;
+    line-height: 1.5;
 }
 
 .container {
     text-align: center;
     max-width: 500px;
     width: 100%;
+    padding: 10px;
 }
 
 h1 {
     margin-bottom: 30px;
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 600;
 }
 
 .contador-container {
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 40px;
     margin-bottom: 30px;
@@ -45,10 +57,10 @@ h1 {
 }
 
 .contador {
-    font-size: 5rem;
+    font-size: clamp(3rem, 10vw, 5rem);
     font-weight: bold;
     margin: 20px 0;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .botoes {
@@ -56,94 +68,95 @@ h1 {
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 
 .btn {
     padding: 15px 40px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     border: none;
-    border-radius: 50px;
+    border-radius: var(--borda-radius);
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--sombra);
     position: relative;
     overflow: hidden;
+    min-width: 160px;
 }
 
 .btn-clique {
-    background-color: #ffffff;
-    color: var(--cor-primaria);
+    background-color: var(--cor-botao);
+    color: var(--cor-botao-texto);
 }
 
 .btn-clique:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--sombra-hover);
+    background-color: var(--cor-botao-hover);
 }
 
 .btn-clique:active {
     transform: translateY(0);
 }
 
-.btn-clique::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 5px;
-    height: 5px;
-    background: rgba(255, 255, 255, 0.5);
-    opacity: 0;
-    border-radius: 100%;
-    transform: scale(1, 1) translate(-50%);
-    transform-origin: 50% 50%;
-}
-
-.btn-clique:focus:not(:active)::after {
-    animation: ripple 1s ease-out;
-}
-
 .btn-reset {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: 2px solid white;
+    background-color: var(--cor-botao-reset);
+    color: var(--cor-texto);
+    border: 2px solid var(--cor-texto);
 }
 
 .btn-reset:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: var(--cor-botao-reset-hover);
 }
 
 .mensagem {
     margin-top: 20px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     min-height: 24px;
+    padding: 0 10px;
+}
+
+/* Efeito Ripple */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
 }
 
 @keyframes ripple {
-    0% {
-        transform: scale(0, 0);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(20, 20);
+    to {
+        transform: scale(4);
         opacity: 0;
     }
 }
 
 /* Responsividade */
 @media (max-width: 600px) {
-    h1 {
-        font-size: 2rem;
-    }
-    
-    .contador {
-        font-size: 3.5rem;
+    .contador-container {
+        padding: 30px;
     }
     
     .btn {
         padding: 12px 30px;
         font-size: 1rem;
+        min-width: 140px;
+    }
+}
+
+@media (max-width: 400px) {
+    .botoes {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 220px;
     }
 }
