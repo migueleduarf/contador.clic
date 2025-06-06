@@ -43,7 +43,7 @@ btnResetar.addEventListener("click", () => {
   divContador.textContent = contador;
 });
 
- .textContent = `Inacreditável! ${contador} cliques!`;
+ textContent = `Inacreditável! ${contador} cliques!`;
     } else if (contador > 0 && contador % 25 === 0) {
         mensagem.textContent = `Bom trabalho! ${contador} cliques!`;
     }
