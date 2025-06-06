@@ -1,18 +1,25 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Contador de Cliques</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Cliques | GitHub Pages</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖱️</text></svg>">
 </head>
 <body>
+    <div class="container">
+        <h1>Contador de Cliques</h1>
+        <div class="contador-container">
+            <div class="contador" id="contador">0</div>
+        </div>
+        <div class="botoes">
+            <button class="btn btn-clique" id="botao">Clique Aqui</button>
+            <button class="btn btn-reset" id="reset">Resetar</button>
+        </div>
+        <div class="mensagem" id="mensagem"></div>
+    </div>
 
-  <div class="container">
-    <div id="contador">0</div>
-    <button id="botaoClique">Clique Aqui</button>
-    <button id="resetar">Resetar</button>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
